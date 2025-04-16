@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SignOutButton, UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
+import UserAvatar from "@/components/UserAvatar";
 
 const SignInNavBar = async () => {
   const user = await currentUser();
@@ -31,22 +32,7 @@ const SignInNavBar = async () => {
             </SignOutButton>
 
             <div className="relative left-1 h-6 sm:h-8 w-[0.6px] bg-[#777169]"></div>
-            <Link href="/profile">
-            <UserButton
-              appearance={{
-                elements: {
-                  userButtonAvatarBox: {
-                    width: "32px", 
-                    height: "32px",
-                    "@sm": {
-                      width: "40px",
-                      height: "40px",
-                    },
-                  },
-                },
-              }}
-            />
-            </Link>
+            <UserAvatar/>
           </div>
         ) : (
           <div className="flex items-center gap-3 sm:gap-5">

@@ -1,14 +1,14 @@
 import React from "react";
 import Link from "next/link";
-import {  UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
+import UserAvatar from "@/components/UserAvatar"
 
 const Navbar = async () => {
   const user = await currentUser();
 
   return (
-    <div className="flex justify-center w-full">
+    <div className="flex justify-center w-full sticky top-0 bg-[#161613] border-b-1 border-b-[#ccc5b9] z-100">
       <nav className="h-[80px] flex justify-between items-center text-white font-bold container px-4 sm:px-6">
         <div className="flex items-center">
           <Link href="/questions">
@@ -24,22 +24,7 @@ const Navbar = async () => {
 
         {user ? (
           <div className="flex items-center gap-3 sm:gap-5">
-            <UserButton
-              userProfileMode="navigation"
-              userProfileUrl="/profile" 
-              appearance={{
-                elements: {
-                  userButtonAvatarBox: {
-                    width: "32px",
-                    height: "32px",
-                    "@sm": {
-                      width: "40px",
-                      height: "40px",
-                    },
-                  },
-                },
-              }}
-            />
+            <UserAvatar />
           </div>
         ) : (
           <div className="flex items-center gap-3 sm:gap-5">

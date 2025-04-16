@@ -1,0 +1,72 @@
+{
+  "id-1": {
+    "userName": "Cyrus",
+    "lang": "C",
+    "question": "Why is C sounds like she?",
+    "likes": 3,
+    "reviews": 0
+  },
+  "id-2": {
+    "userName": "Tony",
+    "lang": "Java",
+    "question": "Why is JVM needed?",
+    "likes": 10,
+    "reviews": 3
+  },
+  "id-3": {
+    "userName": "Luna",
+    "lang": "Python",
+    "question": "Why do we use indentation instead of curly braces?",
+    "likes": 8,
+    "reviews": 2
+  },
+  "id-4": {
+    "userName": "Neko",
+    "lang": "JavaScript",
+    "question": "Why is NaN not equal to NaN?",
+    "likes": 15,
+    "reviews": 5
+  },
+  "id-5": {
+    "userName": "Theo",
+    "lang": "Go",
+    "question": "Why does Go avoid exceptions?",
+    "likes": 6,
+    "reviews": 1
+  },
+  "id-6": {
+    "userName": "Ash",
+    "lang": "Rust",
+    "question": "Why is ownership such a big deal in Rust?",
+    "likes": 11,
+    "reviews": 4
+  },
+  "id-7": {
+    "userName": "Skye",
+    "lang": "TypeScript",
+    "question": "Why does TypeScript exist if JavaScript works fine?",
+    "likes": 7,
+    "reviews": 2
+  },
+  "id-8": {
+    "userName": "Kai",
+    "lang": "C++",
+    "question": "Why do people still use pointers?",
+    "likes": 5,
+    "reviews": 0
+  },
+  "id-9": {
+    "userName": "Aira",
+    "lang": "Swift",
+    "question": "Why is Swift so obsessed with safety?",
+    "likes": 4,
+    "reviews": 1
+  },
+  "id-10": {
+    "userName": "Rin",
+    "lang": "Kotlin",
+    "question": "Why is Kotlin preferred over Java in Android dev?",
+    "likes": 9,
+    "reviews": 3
+  }
+}
