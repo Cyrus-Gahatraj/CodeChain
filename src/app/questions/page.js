@@ -2,7 +2,7 @@ import React from "react";
 import LeftSideBar from "@/components/LeftSideBar";
 import SearchBar from "@/components/SearchBar";
 import QuestionCard from "@/components/QuestionCard";
-import posts from "@/app/data/posts.json"
+import posts from "@/app/data/posts.json";
 
 function QuestionsPage() {
   return (
@@ -33,16 +33,17 @@ function QuestionsPage() {
           </div>
 
           <div className="flex flex-col w-[95%] mx-auto gap-18">
-              {Object.entries(posts).map(([id, post])=>(
-                <QuestionCard
-                  key={id}
-                  userName={post.userName}
-                  lang={post.lang}
-                  question={post.question}
-                  likes={post.likes}
-                  reviews={post.reviews}
-                />
-              ))}
+            {Object.entries(posts).map(([id, post]) => (
+              <QuestionCard
+                key={id}
+                id={id}
+                userName={post.userName}
+                lang={post.lang}
+                question={post.question}
+                likes={post.likes}
+                reviews={post.reviews}
+              />
+            ))}
           </div>
           <SearchBar />
         </main>
