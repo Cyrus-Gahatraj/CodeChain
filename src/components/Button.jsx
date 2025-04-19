@@ -4,7 +4,7 @@ import React from "react";
 import "./button.css"
 import { cn } from "@/lib/utils";
 
-function Button({ text, handleClick, className }) {
+function Button({ children, handleClick, className }) {
   return (
     <button
       className={cn(
@@ -18,7 +18,7 @@ function Button({ text, handleClick, className }) {
       )}
       onClick={handleClick}
     >
-      {text}
+      {children}
     </button>
   );
 }

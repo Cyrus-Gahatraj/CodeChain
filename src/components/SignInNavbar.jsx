@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { SignOutButton, UserButton } from "@clerk/nextjs";
+import { SignOutButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import UserAvatar from "@/components/UserAvatar";

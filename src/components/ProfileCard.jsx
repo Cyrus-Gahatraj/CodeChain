@@ -1,7 +1,8 @@
 import React from "react";
-import Link from "next/link";
 import Button from "@/components/Button";
 import UserAvatar from "@/components/UserAvatar";
+import {Cog} from "lucide-react"
+
 
 function ProfileCard() {
   return (
@@ -18,24 +19,23 @@ function ProfileCard() {
         <div className="flex flex-col gap-2 items-center md:items-start text-center md:text-left">
           <h1 className="text-2xl md:text-3xl font-bold text-white">Cyrus</h1>
           <p className="text-base md:text-lg text-[#ccc5b9]">Cyrus-Gahatraj</p>
-          <Link href="/profile/settings">
-            <Button
-              className="p-3 md:p-[20px] mt-4 w-full md:w-auto"
-              text="Settings"
-            />
-          </Link>
+          <Button className="group p-3 md:p-[20px] mt-4 w-full md:w-auto">
+            <div className="flex items-center justify-center gap-1 ">
+              <Cog className="h-5 w-5 mr-2  group-hover:rotate-90 tansition-all duration-800 ease-in-out" />
+              <p>Settings</p>
+            </div>
+          </Button>
         </div>
       </div>
 
       <div className="flex flex-col sm:flex-row justify-center md:justify-start md:pl-14 gap-4 md:gap-6 mt-6 mb-6">
-        <Button
-          className="bg-sky-500 border-2 border-sky-500 p-3 md:p-[20px] w-full sm:w-auto"
-          text="Follow"
-        />
-        <Button
-          className="bg-sky-500 border-2 border-sky-500 p-3 md:p-[20px] w-full sm:w-auto"
-          text="Following"
-        />
+        <Button className="bg-sky-500 border-2 border-sky-500 p-3 md:p-[20px] w-full sm:w-auto">
+          Follow
+        </Button>
+        
+        <Button className="bg-sky-500 border-2 border-sky-500 p-3 md:p-[20px] w-full sm:w-auto">
+          Following
+        </Button>
       </div>
     </main>
   );
