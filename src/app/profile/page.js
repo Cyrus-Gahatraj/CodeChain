@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowLeft } from "lucide-react";
 import ProfileCard from "@/components/ProfileCard";
 import ProfileGrid from "@/components/ProfileGrid";
@@ -5,7 +7,7 @@ import Link from "next/link";
 import AddButton from "@/components/AddButton";
 
 export default function Home() {
-
+    
     const contributionData = Array(52).fill().map(() => Array(7).fill(0));
 
     contributionData[20][3] = 2; 
@@ -25,6 +27,7 @@ export default function Home() {
         <ProfileCard />
         <ProfileGrid data={contributionData} />
         <AddButton />
+       
       </main>
     </>
   );
