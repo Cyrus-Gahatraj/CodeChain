@@ -24,7 +24,9 @@ function Hero() {
         </p>
         <br />
         <Link href="/sign-in">
-           <Button text="Get Started"></Button>
+           <Button>
+            Get Started
+           </Button>
         </Link>
       </div>
     </section>

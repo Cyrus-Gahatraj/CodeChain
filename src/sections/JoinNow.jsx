@@ -5,7 +5,7 @@ import Button from "@/components/Button";
 
 function JoinNow() {
 
-  const [showButton, setShowButton] = useState(false);
+  const [_, setShowButton] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       if (window.pageYOffset > 300) {
@@ -38,7 +38,9 @@ function JoinNow() {
           answers and contribute to the community.
         </p>
       </div>
-      <Button text="Join Now" handleClick={scrollToTop} />
+      <Button handleClick={scrollToTop} >
+        Join Now
+        </Button>
     </section>
   );
 }
