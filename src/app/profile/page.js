@@ -2,6 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import ProfileCard from "@/components/ProfileCard";
 import ProfileGrid from "@/components/ProfileGrid";
 import Link from "next/link";
+import AddButton from "@/components/AddButton";
 
 export default function Home() {
 
@@ -23,6 +24,7 @@ export default function Home() {
       <main className="w-[80vw] mx-auto p-4 border-b border-[#ccc5b9] flex gap-10 flex-wrap items-center justify-center md:justify-evenly">
         <ProfileCard />
         <ProfileGrid data={contributionData} />
+        <AddButton />
       </main>
     </>
   );
