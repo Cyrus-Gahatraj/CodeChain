@@ -3,7 +3,6 @@ import Link from "next/link";
 import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import UserAvatar from "@/components/UserAvatar"
-import { SignOutButton } from "@clerk/nextjs";
 
 const Navbar = async () => {
   const user = await currentUser();
@@ -26,12 +25,7 @@ const Navbar = async () => {
 
         {user ? (
           <div className="flex items-center gap-3 sm:gap-5">
-          <SignOutButton>
-            <button className="font-light text-[#ccc5b9] cursor-pointer hover:scale-103 hover:text-white transition-all duration-700 ease text-sm sm:text-base">
-              Sign-out
-            </button>
-          </SignOutButton>
-            <div className="relative left-1 h-6 sm:h-8 w-[0.6px] bg-[#777169]"></div>
+        
             <UserAvatar />
           </div>
         ) : (
