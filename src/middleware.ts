@@ -1,7 +1,11 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
 
 const isPublicRoute = (path: string) => {
-  return ["/", "/sign-in", "/sign-up"].includes(path);
+  return ["/", "/sign-in", "/sign-up", "/questions"].includes(path);
+};
+
+const isProtectedRoute = (path: string) => {
+  return path.startsWith("/profile");
 };
 
 export default clerkMiddleware(async (auth, req) => {
@@ -9,12 +13,12 @@ export default clerkMiddleware(async (auth, req) => {
   const path = req.nextUrl.pathname;
 
   // Handle users who aren't authenticated
-  if (!userId && !isPublicRoute(path)) {
+  if (!userId && isProtectedRoute(path)) {
     return Response.redirect(new URL("/sign-in", req.url));
   }
 
   // Handle users who are authenticated
-  if (userId && isPublicRoute(path)) {
+  if (userId && ["/", "/sign-in", "/sign-up"].includes(path)) {
     return Response.redirect(new URL("/questions", req.url));
   }
 });
