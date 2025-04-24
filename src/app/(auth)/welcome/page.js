@@ -6,7 +6,7 @@ import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { db } from "@/db";
-import { usersTable } from "@/drizzle/schema";
+import { usersTable } from "/drizzle/schema";
 import { eq } from "drizzle-orm";
 
 function WelcomePage() {
