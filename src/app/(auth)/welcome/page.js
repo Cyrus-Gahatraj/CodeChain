@@ -1,4 +1,3 @@
-// synchronize auth status to database
 "use client";
 
 import React from "react";
@@ -19,7 +18,6 @@ function WelcomePage() {
       if (!isLoaded || !user) return;
 
       try {
-        // Check if user exists in database
         const existingUser = await db
           .select()
           .from(usersTable)
@@ -27,7 +25,6 @@ function WelcomePage() {
           .limit(1);
 
         if (existingUser.length === 0) {
-          // Create user in database if not exists
           await db.insert(usersTable).values({
             clerkId: user.id,
             email: user.emailAddresses[0].emailAddress,
@@ -35,11 +32,9 @@ function WelcomePage() {
           });
         }
 
-        // Redirect to questions page
         router.push("/questions");
       } catch (error) {
         console.error("Error syncing user:", error);
-        // Handle error appropriately
       }
     };
 
