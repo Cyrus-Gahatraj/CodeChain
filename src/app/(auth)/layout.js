@@ -1,7 +1,7 @@
 import React from "react";
 import SignInNavbar from "@/components/SignInNavbar";
 
-function layout({ children }) {
+function Layout({ children }) {
   return (
     <div className="max-h-screen overflow-hidden ">
       <SignInNavbar />
@@ -10,4 +10,4 @@ function layout({ children }) {
   );
 }
 
-export default layout;
+export default Layout

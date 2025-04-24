@@ -14,10 +14,9 @@ const contributionData = Array(52)
 contributionData[20][3] = 2;
 contributionData[21][1] = 4;
 contributionData[18][5] = 1;
-contributionData[20][0] = 3;  
+contributionData[20][0] = 3;
 
-function layout({ children }) {
-
+function Layout({ children }) {
   const pathname = usePathname();
   const profileLink = [
     {
@@ -33,9 +32,9 @@ function layout({ children }) {
     {
       id: 3,
       label: "Bookmarks",
-      href: "/profile/bookmarks"
-    }
-  ]
+      href: "/profile/bookmarks",
+    },
+  ];
 
   return (
     <>
@@ -50,21 +49,22 @@ function layout({ children }) {
         <ProfileGrid data={contributionData} />
       </main>
       <div className="w-[78vw] text-[#ccc4b8] mx-auto flex justify-around gap-6 mt-3">
-        
         {profileLink.map((item) => {
-          const isActive = item.href===pathname;
+          const isActive = item.href === pathname;
           const nonActiveLink = "font-bold mt-4";
           const activeLink = `${nonActiveLink}  text-white underline underline-offset-4`;
-          return(
+          return (
             <Link href={item.href} key={item.id}>
-              <h1 className={isActive ? activeLink : nonActiveLink}>{item.label}</h1>
+              <h1 className={isActive ? activeLink : nonActiveLink}>
+                {item.label}
+              </h1>
             </Link>
-          )
+          );
         })}
       </div>
-        {children}
+      {children}
     </>
   );
 }
 
-export default layout;
+export default Layout;

@@ -27,8 +27,9 @@ function QuestionsPage() {
               Welcome to CodeChain!
             </h2>
             <p className="text-sm text-[#ccc5b9]">
-              This is where you'll find and ask coding questions. The AI will
-              provide initial answers, and the community will help refine them.
+              This is where you&apos;ll find and ask coding questions. The AI
+              will provide initial answers, and the community will help refine
+              them.
             </p>
           </div>
 
