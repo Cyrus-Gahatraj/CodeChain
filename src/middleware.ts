@@ -1,28 +1,30 @@
-import { clerkMiddleware } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
+import { createRouteMatcher, clerkMiddleware } from "@clerk/nextjs/server";
 
-const isPublicRoute = (path: string) => {
-  return ["/", "/sign-in", "/sign-up", "/questions"].includes(path);
-};
-
-const isProtectedRoute = (path: string) => {
-  return path.startsWith("/profile");
-};
+const isProtectedRoute = createRouteMatcher([
+  "/questions(.*)",
+  "/profile(.*)",
+  "/profile/reviews(.*)",
+  "/profile/bookmarks(.*)",
+]);
 
 export default clerkMiddleware(async (auth, req) => {
   const { userId } = await auth();
   const path = req.nextUrl.pathname;
 
-  // Handle users who aren't authenticated
-  if (!userId && isProtectedRoute(path)) {
-    return Response.redirect(new URL("/sign-in", req.url));
+  if (!userId && isProtectedRoute(req)) {
+    return NextResponse.redirect(new URL("/sign-in", req.url));
   }
 
-  // Handle users who are authenticated
   if (userId && ["/", "/sign-in", "/sign-up"].includes(path)) {
-    return Response.redirect(new URL("/questions", req.url));
+    return NextResponse.redirect(new URL("/questions", req.url));
   }
+
+  return NextResponse.next();
 });
 
 export const config = {
-  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
+  matcher: [
+    "/((?!api/webhook/register|_next/static|_next/image|favicon.ico).*)",
+  ],
 };
