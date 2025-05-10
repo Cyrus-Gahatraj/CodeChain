@@ -6,6 +6,7 @@ import ProfileCard from "@/components/ProfileCard";
 import ProfileGrid from "@/components/ProfileGrid";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const contributionData = Array(52)
   .fill()
@@ -17,6 +18,7 @@ contributionData[18][5] = 1;
 contributionData[20][0] = 3;
 
 function Layout({ children }) {
+  const router = useRouter();
   const pathname = usePathname();
   const profileLink = [
     {
@@ -39,9 +41,9 @@ function Layout({ children }) {
   return (
     <>
       <nav className="flex h-12 pl-6 items-center justify-start">
-        <Link href="/questions">
+        <button onClick={() => router.back()} className="cursor-pointer">
           <ArrowLeft />
-        </Link>
+        </button>
       </nav>
 
       <main className="w-[80vw]  mx-auto p-4 border-b border-[#ccc5b9] flex gap-10 flex-wrap items-center justify-center md:justify-evenly">

@@ -3,6 +3,8 @@ import LeftSideBar from "@/components/LeftSideBar";
 import SearchBar from "@/components/SearchBar";
 import QuestionCard from "@/components/QuestionCard";
 import posts from "@/app/data/posts.json";
+import { Bot } from "lucide-react";
+import Link from "next/link";
 
 function QuestionsPage() {
   return (
@@ -20,7 +22,15 @@ function QuestionsPage() {
       />
 
       <div className="relative z-10 mx-auto">
-        <LeftSideBar />
+        <LeftSideBar>
+          <Link href="/ask-ai">
+            <div className="flex gap-2 items-center justify-start cursor-pointer">
+              <Bot className="size-9" />
+              <span className="text-lg font-medium  sm:block hidden">AI</span>
+            </div>
+          </Link>
+        </LeftSideBar>
+
         <main className="flex flex-col gap-20 ml-20 sm:ml-48 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 ">
           <div className="shadow rounded-lg p-6 bg-[#0B0B09] border-2 border-white">
             <h2 className="text-xl font-semibold mb-4">

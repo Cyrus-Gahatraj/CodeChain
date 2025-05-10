@@ -19,6 +19,6 @@
       "@/*": ["*"]
     }
   },
-  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", "src/app/profile/@modal/(.)settings/page.jsx", "src/app/profile/settings/page.jsx"],
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", "src/app/profile/@modal/(.)settings/page.jsx", "src/app/profile/settings/page.jsx", "src/app/api/webhook/register/route.js"],
   "exclude": ["node_modules"]
 }
